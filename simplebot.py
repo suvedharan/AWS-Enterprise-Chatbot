@@ -15,8 +15,7 @@ neg_distribution = []
 
 
 def sentiment(u_input):
-    """Utilitarian function: Appends 'neg_distribution'
-    with negative probability, returns Negative Probability"""
+    
 
     blob_it = cl.trainer().prob_classify(u_input)
     npd = round(blob_it.prob("neg"), 2)
@@ -25,11 +24,7 @@ def sentiment(u_input):
 
 
 def simplebot(user):
-    """Rule base bot, takes an argument, user input in form of a string.
-    In sequence will pre-process the string. Lower case, tokenize and remove
-    stop words. iterates through CONVERSATION, if filtered_input intersects
-    response_set is updated. if the set is empty, it returns a message,
-    else it returns the longest string in the set"""
+   
 
     user_input = user
     user_blob = TextBlob(user_input)
@@ -52,13 +47,7 @@ def simplebot(user):
 
 
 def escalation(uinput):
-    """Monitors user sentiment index, takes an argument,
-    user_input, in form of a string. If the emotional index,
-    set by sentiment() and taken from neg_distribution,
-    increases above a set threshold and it is sustained
-    an automatic respose/action is triggered.
-    simultaneously sending user_input to simplebot() for a
-    response"""
+    
 
     live_rep = f"We apologize {BOT_NAME} is unable to assist \
     you, we are getting a live representative for you, \
